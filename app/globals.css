@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-geist-sans), Inter, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+html { scroll-behavior: smooth; background: #0a0a0a; }
+body { background: #0a0a0a; color: #ededed; -webkit-font-smoothing: antialiased; }
+section[id] { scroll-margin-top: 72px; }
+a:focus-visible, button:focus-visible { outline: 1px solid rgba(255,255,255,.55); outline-offset: 3px; border-radius: 6px; }
+
+.track::-webkit-scrollbar { height: 0; }
+.track { scrollbar-width: none; }
+
+.card { position: relative; overflow: hidden; transition: border-color .2s ease, transform .2s ease; }
+.card:hover { border-color: rgba(255,255,255,.14); transform: translateY(-2px); }
+.card .hl { position: absolute; left: 0; right: 0; top: 0; height: 1px; opacity: 0; transition: opacity .25s ease; }
+.card:hover .hl { opacity: 1; }
+
+.chip { transition: border-color .2s ease, color .2s ease; }
+.chip:hover { color: #afafaf; }
+.chip.sa:hover { border-color: rgba(123,164,244,.5); }
+.chip.em:hover { border-color: rgba(70,196,155,.5); }
+.chip.am:hover { border-color: rgba(179,157,245,.5); }
+.chip.ne:hover { border-color: rgba(255,255,255,.25); }
+
+.row { transition: background .15s ease; }
+.row:hover { background: rgba(255,255,255,.02); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .card, .card:hover { transition: none; transform: none; }
+}
